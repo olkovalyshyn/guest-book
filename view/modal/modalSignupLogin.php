@@ -1,13 +1,17 @@
-<div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalSignupLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Login form</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="cancel-x"></button>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Some text</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="modal-btn-x"></button>
             </div>
             <div class="modal-body">
                 <form>
                     <div style="color: red" id="error-message"></div>
+                    <div class="mb-3">
+                        <label for="user-name" class="col-form-label">Name:</label>
+                        <input type="text" class="form-control" id="user-name">
+                    </div>
                     <div class="mb-3">
                         <label for="user-email" class="col-form-label">Email:</label>
                         <input type="email" class="form-control" id="user-email">
@@ -22,8 +26,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancel-btn">Canсel</button>
-                <button type="button" class="btn btn-primary" id="register-btn">Login</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="modal-btn-cancel">Canсel</button>
+                <button type="button" class="btn btn-primary" id="modal-btn-ok">Some text</button>
             </div>
         </div>
     </div>

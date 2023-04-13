@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -15,8 +16,16 @@
 
             </ul>
             <form class="d-flex" role="search">
-                <button class="btn btn-outline-success" type="button" data-bs-toggle="modal" data-bs-target="#modalLogin">Log in</button>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSignup" >Sign up</button>
+                <p id="greeting-text"></p>
+
+                <button class="btn btn-outline-success btn-visibility" type="submit" id="btn-logout">Log out</button>
+
+                <button class="btn btn-outline-success" type="button" data-bs-toggle="modal"
+                        data-bs-target="#modalSignupLogin" id="btn-login">Log in
+                </button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSignupLogin"
+                        id="btn-signup">Sign up
+                </button>
             </form>
         </div>
     </div>
