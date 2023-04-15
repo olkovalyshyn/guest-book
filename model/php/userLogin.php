@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('../../connect/connect.php');
 
 $userName = $_POST['userName'];
@@ -9,9 +10,9 @@ $userBrowser = $_POST['userBrowser'];
 
 class UserLogin extends ConnectionDB
 {
+
     public function login($userName, $userEmail, $userPassword, $userIp, $userBrowser)
     {
-
 
         $response = [];
         $conn = $this->connect();
@@ -25,6 +26,15 @@ class UserLogin extends ConnectionDB
             $loginedUser = $result->fetch(PDO::FETCH_ASSOC);
 
             if ($loginedUser['name'] === $userName && $loginedUser['email'] === $userEmail && $loginedUser['password'] === $userPassword) {
+                $_SESSION = $loginedUser;
+
+//                if($_SESSION['name']){
+//                    echo "Імя існує!!!!";
+//                }else {echo "НЕМАЄ ТАКОГО ІМЕНІ в СЕСІЇ";}
+//
+//                echo "!!!$_SESSION!!!".$_SESSION['user'];
+//                var_dump($_SESSION['user']);
+
                 $response = array('status' => true, 'error' => null, 'user' => array('name' => $loginedUser['name'], 'email' => $loginedUser['email'], 'password' => $loginedUser['password'], 'ip' => $loginedUser['ip'], 'browser' => $loginedUser['browser']));
             } else {
                 http_response_code(404);

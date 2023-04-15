@@ -34,7 +34,10 @@ $(document).ready(function () {
                     },
                     success: function (response) {
                         console.log("!!!RES", response);
-                        response = response;
+                        // response = response;
+
+                        location.reload();
+
                         $('#modalSignupLogin').modal('hide');
 
                         //очищення модального вікна
@@ -44,21 +47,22 @@ $(document).ready(function () {
                         $('#error-message').html('');
 
 //добавлення привітання залогіненого юзера
-                        $('#greeting-text').html("Hello, " + response['user']['name']);
+//                         $('#greeting-text').html("Hello, " + response['user']['name']);
 
                         //зміна класів і віповідно видимість конпок
-                        $('#btn-logout').removeClass('btn-visibility');
-                        $('#btn-login').addClass('btn-visibility');
-                        $('#btn-signup').addClass('btn-visibility');
+                        // $('#btn-logout').removeClass('btn-visibility');
+                        // $('#btn-login').addClass('btn-visibility');
+                        // $('#btn-signup').addClass('btn-visibility');
 
                         //добавлення cookie
-                        let date = new Date(Date.now() + 3600 * 24); //один день
-                        date = date.toUTCString();
-                        document.cookie = "userName=" + response['user']['name'] + "; path=/; expires=" + date;
+                        // let date = new Date(Date.now() + 3600 * 24); //один день
+                        // date = date.toUTCString();
+                        // document.cookie = "userName=" + response['user']['name'] + "; path=/; expires=" + date;
 
                     },
                     error: function (response) {
                         //виводить в модалку повідомлення
+                        console.log("!!!response in login error", response)
                         let message = response.responseJSON.error.message;
                         $('#error-message').html(message);
                     },
@@ -71,23 +75,26 @@ $(document).ready(function () {
 
 })
 
-console.log(document.cookie);
+// console.log(document.cookie);
+
+
 //якщо юзер зареєструвався і перезавантажив сторінку, то він
 // залишаєтсья авторизованим до закінчення дії cookie
-if (document.cookie.includes('userName')) {
 
-    // дістається значення cookie "userName"
-    const userName = document.cookie.split('; ')
-        .find(row => row.startsWith('userName='))
-        .split('=')[1];
-    let userNameGreeting = userName;
-
-    console.log("!!userNameGreeting!!!", userNameGreeting);
-
-    $('#greeting-text').html("Hello, " + userNameGreeting);
-
-    //зміна класів і віповідно видимість конпок
-    $('#btn-logout').removeClass('btn-visibility');
-    $('#btn-login').addClass('btn-visibility');
-    $('#btn-signup').addClass('btn-visibility');
-}
+// if (document.cookie.includes('userName')) {
+//
+//     // дістається значення cookie "userName"
+//     const userName = document.cookie.split('; ')
+//         .find(row => row.startsWith('userName='))
+//         .split('=')[1];
+//     let userNameGreeting = userName;
+//
+//     console.log("!!userNameGreeting!!!", userNameGreeting);
+//
+//     $('#greeting-text').html("Hello, " + userNameGreeting);
+//
+//     //зміна класів і віповідно видимість конпок
+//     $('#btn-logout').removeClass('btn-visibility');
+//     $('#btn-login').addClass('btn-visibility');
+//     $('#btn-signup').addClass('btn-visibility');
+// }

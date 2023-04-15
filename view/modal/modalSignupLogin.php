@@ -18,7 +18,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="user-password" class="col-form-label">Password:</label>
-                        <input type="text" class="form-control" id="user-password">
+                        <input type="password" class="form-control" id="user-password">
                     </div>
                     <input type="hidden" class="form-control" id="user-ip" value=<?php echo $_SERVER["REMOTE_ADDR"]  ?>>
                     <input type="hidden" class="form-control" id="user-browser" value=<?php echo $_SERVER["HTTP_USER_AGENT"]  ?>>
