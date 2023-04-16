@@ -1,5 +1,11 @@
 $(document).ready(function () {
-    $('#btn-signup').off('click').on('click', function(){
+
+    $('#btn-signup').on('mousedown', function(){
+        $('#forgotPasswordLink').addClass('visibility');
+    });
+
+
+    $('#btn-signup').on('click', function(){
         console.log("Clicked on SIGNUP");
         $(this).attr('data-btn', 'signup');
 
@@ -8,6 +14,8 @@ $(document).ready(function () {
 
         //якщо натиснута кнопка signup, то виконуємо дії
         if($(this).data('btn') === 'signup'){
+            // $('#forgotPasswordLink').addClass('visibility');
+
             $('#exampleModalLabel').html('Registration form');
             $('#modal-btn-ok').html('Registration');
 
@@ -65,7 +73,7 @@ $(document).ready(function () {
 
 //очистка модального вікна при кліку на бекдроп (mousedown - бо при click при тестуванні юзер може ЛКМ виділивши інпут вилізти за межі модалки, доклікнути на бекдропі і форма очищається, що не правильно)
     $('#modalSignupLogin').on('mousedown', function (event) {
-        if (event.target.id === 'modalSignup') {
+        if (event.target.id === 'modalSignupLogin') {
             $('#user-name').val('');
             $('#user-email').val('');
             $('#user-password').val('');

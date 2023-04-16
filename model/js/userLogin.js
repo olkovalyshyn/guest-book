@@ -1,13 +1,17 @@
 $(document).ready(function () {
 
-    $('#btn-login').off('click').on('click', function () {
+    $('#btn-login').on('click', function () {
 
-        console.log("Clicked on btn-login");
+        // console.log("Clicked on btn-login");
         $(this).attr('data-btn', 'login');
 
+        //на форму логін добавляється кнопка "Забули пароль?"
+
         $btnRole = $(this).data('btn');
-        console.log("!!!$btnRole", $btnRole);
+        // console.log("!!!$btnRole", $btnRole);
         if ($(this).data('btn') === 'login') {
+            $('#forgotPasswordLink').removeClass('visibility');
+
             $('#exampleModalLabel').html('Login form');
             $('#modal-btn-ok').html('Login');
 

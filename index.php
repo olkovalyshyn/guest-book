@@ -18,6 +18,9 @@
 <button  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addMessageModal" id="btn-show-modal-add">Add message</button>
 <?php include("./view/formAddMessage.php") ?>
 <?php include("./view/modal/modalSignupLogin.php") ?>
+
+<?php include("./view/modal/modalForgotPassword.php") ?>
+
 <?php //include("./model/php/captcha.php") ?>
 
 <table class="table">
@@ -37,11 +40,13 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
+
 <script src="./model/js/userRegister.js"></script>
 <script src="./model/js/userLogin.js"></script>
 <script src="./model/js/userLogout.js"></script>
 <script src="./model/js/addMessage.js"></script>
 <script src="./model/js/getAll.js"></script>
+<script src="./model/js/forgotPassword.js"></script>
 
 </body>
 

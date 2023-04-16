@@ -3,7 +3,8 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Some text</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="modal-btn-x"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        id="modal-btn-x"></button>
             </div>
             <div class="modal-body">
                 <form>
@@ -19,14 +20,29 @@
                     <div class="mb-3">
                         <label for="user-password" class="col-form-label">Password:</label>
                         <input type="password" class="form-control" id="user-password">
+                        <!--                            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalForgotPassword" id="modal-btn-forgot">Forgot password?</button>-->
+                        <!--
+                        <a href="./view/modal/modalForgotPassword.php">Forgot password?</a>-->
+                        <!--                        <button type="button" id="forgotPasswordLink">Forgot password?</button>-->
+
+                        <button type="button" id="forgotPasswordLink" class="btn btn-primary"
+                                data-bs-toggle="modal" data-bs-target="#modalForgotPassword">
+                            Forgot password?
+                        </button>
+
+                        <!--                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#forgotPassword">-->
+                        <!--                            Launch demo modal-->
+                        <!--                        </button>-->
                     </div>
-                    <input type="hidden" class="form-control" id="user-ip" value=<?php echo $_SERVER["REMOTE_ADDR"]  ?>>
-                    <input type="hidden" class="form-control" id="user-browser" value=<?php echo $_SERVER["HTTP_USER_AGENT"]  ?>>
+                    <input type="hidden" class="form-control" id="user-ip" value=<?php echo $_SERVER["REMOTE_ADDR"] ?>>
+                    <input type="hidden" class="form-control" id="user-browser"
+                           value=<?php echo $_SERVER["HTTP_USER_AGENT"] ?>>
 
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="modal-btn-cancel">Canсel</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="modal-btn-cancel">Canсel
+                </button>
                 <button type="button" class="btn btn-primary" id="modal-btn-ok">Some text</button>
             </div>
         </div>
