@@ -50,19 +50,6 @@ $(document).ready(function () {
                         $('#user-password').val('');
                         $('#error-message').html('');
 
-//добавлення привітання залогіненого юзера
-//                         $('#greeting-text').html("Hello, " + response['user']['name']);
-
-                        //зміна класів і віповідно видимість конпок
-                        // $('#btn-logout').removeClass('btn-visibility');
-                        // $('#btn-login').addClass('btn-visibility');
-                        // $('#btn-signup').addClass('btn-visibility');
-
-                        //добавлення cookie
-                        // let date = new Date(Date.now() + 3600 * 24); //один день
-                        // date = date.toUTCString();
-                        // document.cookie = "userName=" + response['user']['name'] + "; path=/; expires=" + date;
-
                     },
                     error: function (response) {
                         //виводить в модалку повідомлення

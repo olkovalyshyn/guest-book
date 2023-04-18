@@ -1,4 +1,5 @@
-<div class="modal fade" id="modalForgotPassword" tabindex="-1" role="dialog" aria-labelledby="modalForgotPasswordLabel" aria-hidden="true">
+<div class="modal fade" id="modalForgotPassword" tabindex="-1" role="dialog" aria-labelledby="modalForgotPasswordLabel"
+     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -10,20 +11,23 @@
             <div class="modal-body">
 
 
-<form id="forgotPassword" method="post" action="../model/php/forgotPassword.php" >
-    <p style="color:red" id="error-message-recover"></p>
-    <label for="user-email-recover-pswd">Email:</label>
-    <input type="email" name="email" id="user-email-recover-pswd">
+                <form id="forgotPassword" >
+                    <p style="color:red" id="error-message-recover"></p>
+                    <label for="user-email-recover-pswd">Email:</label>
+                    <input type="email" name="email" id="user-email-recover-pswd">
 
-<!--    <button type="button" name="recover" id="btn-send-mail-recover">Send me mail</button>-->
+                    <!--    <button type="button" name="recover" id="btn-send-mail-recover">Send me mail</button>-->
 
-</form>
+                </form>
 
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="modal-btn-cancel-recover">Close</button>
-                <button type="button" name="recover" class="btn btn-primary" id="btn-send-mail-recover">Send me mail</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="modal-btn-cancel-recover">
+                    Close
+                </button>
+                <button type="button" name="recover" class="btn btn-primary" id="btn-send-mail-recover">Send me mail
+                </button>
             </div>
         </div>
     </div>

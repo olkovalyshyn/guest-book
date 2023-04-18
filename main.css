@@ -20,3 +20,24 @@ body {
     text-decoration: none;
 }
 
+/*pagination*/
+/*.page-list{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*background-color: #bbacac;*/
+/*}*/
+
+.active{
+    color: red;
+}
+ .pagination a {
+     margin-left: 5px;
+     margin-right: 5px;
+ }
+
+table thead th[data-column-name="name"],
+table thead th[data-column-name="email"],
+table thead th[data-column-name="date"]
+{
+    cursor: pointer;
+}

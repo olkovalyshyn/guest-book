@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
@@ -20,23 +21,37 @@
 <?php include("./view/modal/modalSignupLogin.php") ?>
 
 <?php include("./view/modal/modalForgotPassword.php") ?>
-
+<?php include("./view/modal/modalNewPassword.php") ?>
 <?php //include("./model/php/captcha.php") ?>
 
-<table class="table">
+<?php //include("./model/php/pagination.php") ?>
+<?php //include ("./view/pagination.php")?>
+
+<!--<div class="pagination-page">-->
+<!--    <a href=""><button type="button" class="page">-->
+<!--            qqq-->
+<!--        </button></a>`-->
+<!--</div>-->
+
+<div class="pagination"></div>
+
+
+<table class="table" id="table">
     <thead>
     <tr>
 
-        <th scope="col">Username</th>
-        <th scope="col">Email</th>
-        <th scope="col">Message</th>
-        <th scope="col">Date</th>
+        <th data-column-name="name" data-sort-direction="asc" class="sort">Username</th>
+        <th data-column-name="email" data-sort-direction="asc" class="sort">Email</th>
+        <th >Message</th>
+        <th data-column-name="date" data-sort-direction="desc" class="sort">Date</th>
     </tr>
     </thead>
     <tbody id="items-row">
 
     </tbody>
 </table>
+
+<div class="pagination"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
@@ -47,6 +62,13 @@
 <script src="./model/js/addMessage.js"></script>
 <script src="./model/js/getAll.js"></script>
 <script src="./model/js/forgotPassword.js"></script>
+<script src="./model/js/newPassword.js"></script>
+<script src="./model/js/pagination.js"></script>
+<script src="./model/js/sort.js"></script>
+
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+
+
 
 </body>
 

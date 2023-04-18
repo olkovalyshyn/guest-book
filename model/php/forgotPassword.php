@@ -27,7 +27,7 @@ class RecoverPassword extends ConnectionDB
                 $params = ['key' => $key, 'email' => $userEmail];
                 $result->execute($params);
 
-                $url = 'http://guest-book/modalNewPassword.php?key=' . $key;
+                $url = 'http://guest-book/view/modal/modalNewPassword.php?key=' . $key;
                 $message = $registredUser['name'] . ', there was a request to reset the password. Follow the link to change ' . $url;
                 mail($registredUser['email'], 'Password change', $message);
 
