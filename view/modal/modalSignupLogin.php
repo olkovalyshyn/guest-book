@@ -10,23 +10,23 @@
                 <form>
                     <div style="color: red" id="error-message"></div>
                     <div class="mb-3">
-                        <label for="user-name" class="col-form-label">Name:</label>
+                        <label for="user-name" class="col-form-label lang" data-translate="username">Name:</label>
                         <input type="text" class="form-control" id="user-name">
                     </div>
                     <div class="mb-3">
-                        <label for="user-email" class="col-form-label">Email:</label>
+                        <label for="user-email" class="col-form-label lang" data-translate="email">Email:</label>
                         <input type="email" class="form-control" id="user-email">
                     </div>
                     <div class="mb-3">
-                        <label for="user-password" class="col-form-label">Password:</label>
+                        <label for="user-password" class="col-form-label lang" data-translate="password">Password:</label>
                         <input type="password" class="form-control" id="user-password">
                         <!--                            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalForgotPassword" id="modal-btn-forgot">Forgot password?</button>-->
                         <!--
                         <a href="./view/modal/modalForgotPassword.php">Forgot password?</a>-->
                         <!--                        <button type="button" id="forgotPasswordLink">Forgot password?</button>-->
 
-                        <button type="button" id="forgotPasswordLink" class="btn btn-primary"
-                                data-bs-toggle="modal" data-bs-target="#modalForgotPassword">
+                        <button type="button" id="forgotPasswordLink" class="btn btn-primary lang"
+                                data-bs-toggle="modal" data-bs-target="#modalForgotPassword" data-translate="forgotPassword">
                             Forgot password?
                         </button>
 
@@ -41,9 +41,9 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="modal-btn-cancel">Canсel
+                <button type="button" class="btn btn-secondary lang" data-bs-dismiss="modal" id="modal-btn-cancel" data-translate="cancel">Cancel
                 </button>
-                <button type="button" class="btn btn-primary" id="modal-btn-ok">Some text</button>
+                <button type="button" class="btn btn-primary lang" id="modal-btn-ok">Some text</button>
             </div>
         </div>
     </div>

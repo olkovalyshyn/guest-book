@@ -50,6 +50,8 @@ $(document).ready(function () {
                         $('#user-password').val('');
                         $('#error-message').html('');
 
+                        //показуються записи залогіненого користувача
+                        chooseOunNotes();
                     },
                     error: function (response) {
                         //виводить в модалку повідомлення
@@ -63,6 +65,36 @@ $(document).ready(function () {
 
         }
     });
+
+    function chooseOunNotes(){
+        $.ajax({
+            url: './model/php/pagination.php',
+            method: 'POST',
+            dataType: 'json',
+            // data: {
+            //     userName,
+            //     userEmail,
+            //     userPassword,
+            //     userIp,
+            //     userBrowser,
+            // },
+            success: function (response) {
+                response = JSON.parse(response);
+
+                console.log("!!!RES for OUN", response);
+
+                $('#items-row').html(response.user.html);
+
+
+            },
+            error: function (response) {
+                //виводить в модалку повідомлення
+                // console.log("!!!response in login error", response)
+            },
+
+        })
+
+    }
 
 })
 

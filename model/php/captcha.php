@@ -29,7 +29,7 @@ $text_color = imagecolorallocate($image, 0, 0, 0);
 imagestring($image, 5, 10, 8, $random_text, $text_color);
 
 // Виводимо зображення на сторінку
-header('Content-Type: image/png');
+//header('Content-Type: image/png');
 imagepng($image);
 imagedestroy($image);
 

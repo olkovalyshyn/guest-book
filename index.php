@@ -15,14 +15,15 @@
 <body>
 <!--<h1>Hello, world!</h1>-->
 <?php include("./view/navbar.php")?>
-<!--<a href="./view/formAddMessage.php">Add message</a>-->
-<button  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addMessageModal" id="btn-show-modal-add">Add message</button>
 <?php include("./view/formAddMessage.php") ?>
 <?php include("./view/modal/modalSignupLogin.php") ?>
 
 <?php include("./view/modal/modalForgotPassword.php") ?>
 <?php include("./view/modal/modalNewPassword.php") ?>
 <?php //include("./model/php/captcha.php") ?>
+<?php include("./view/modal/modalConfirmDeleteMsg.php") ?>
+<?php include("./view/modal/modalEditMsg.php") ?>
+
 
 <?php //include("./model/php/pagination.php") ?>
 <?php //include ("./view/pagination.php")?>
@@ -32,6 +33,9 @@
 <!--            qqq-->
 <!--        </button></a>`-->
 <!--</div>-->
+<?php if($_SESSION['name']): ?>
+<button  type="button" class="btn btn-primary lang" data-bs-toggle="modal" data-bs-target="#addMessageModal" id="btn-show-modal-add" data-translate="addmesage">Add message</button>
+<?php endif; ?>
 
 <div class="pagination"></div>
 
@@ -39,11 +43,10 @@
 <table class="table" id="table">
     <thead>
     <tr>
-
-        <th data-column-name="name" data-sort-direction="asc" class="sort">Username</th>
-        <th data-column-name="email" data-sort-direction="asc" class="sort">Email</th>
-        <th >Message</th>
-        <th data-column-name="date" data-sort-direction="desc" class="sort">Date</th>
+        <th data-column-name="name" data-sort-direction="asc" class="sort lang" title="Click to sort" data-translate="username">Username</th>
+        <th data-column-name="email" data-sort-direction="asc" class="sort lang" title="Click to sort" data-translate="email">Email</th>
+        <th class="lang" data-translate="message">Message</th>
+        <th data-column-name="date" data-sort-direction="desc" class="sort lang" title="Click to sort" data-translate="date">Date</th>
     </tr>
     </thead>
     <tbody id="items-row">
@@ -54,8 +57,6 @@
 <div class="pagination"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-
-
 <script src="./model/js/userRegister.js"></script>
 <script src="./model/js/userLogin.js"></script>
 <script src="./model/js/userLogout.js"></script>
@@ -65,10 +66,10 @@
 <script src="./model/js/newPassword.js"></script>
 <script src="./model/js/pagination.js"></script>
 <script src="./model/js/sort.js"></script>
-
+<script src="./model/js/messageDelete.js"></script>
+<script src="./model/js/messageEdit.js"></script>
+<script src="./model/js/translate.js"></script>
 <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
-
-
 
 </body>
 

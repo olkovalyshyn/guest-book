@@ -1,12 +1,14 @@
 $(document).ready(function () {
 
-    function displayDataAdd(item) {
+    function displayDataAdd(item, id) {
         let html = '';
-        html += '<tr>\
+        html += '<tr data-id="'+ id +'">\
                     <td>'+ item.user.userName +'</td>\
                     <td>'+ item.user.email +'</td>\
-                    <td>'+ item.user.message +'</td>\
+                    <td class="message" >'+ item.user.message +'</td>\
                     <td>'+ item.user.date +'</td>\
+                    <td><button type="button" id="btn-edit-user" class="btn-edit-user btn btn-sm btn-outline-secondary badge" data-bs-toggle="modal" data-bs-target="#user-form-modal">EDIT</button></td>\
+                    <td><button type="button" class="btn btn-sm btn-outline-secondary badge btn-del-user">DELETE</button></td>\
                 </tr>';
         return html;
     }
@@ -22,12 +24,12 @@ $(document).ready(function () {
         let message = $('#message-text').val();
         let language = $('#language').val();
 
-        console.log("!!!userName", userName);
-        console.log("!!!userEmail", userEmail);
-        console.log("!!!homepage", homepage);
-        console.log("!!!captcha", captcha);
-        console.log("!!!message", message);
-        console.log("!!!language", language);
+        // console.log("!!!userName", userName);
+        // console.log("!!!userEmail", userEmail);
+        // console.log("!!!homepage", homepage);
+        // console.log("!!!captcha", captcha);
+        // console.log("!!!message", message);
+        // console.log("!!!language", language);
 
         // console.log("!!!$_SESSION[captcha]", $_SESSION["captcha"]);
 
@@ -45,11 +47,20 @@ $(document).ready(function () {
             },
             success: function (response) {
 
-                $('#addMessageModal').modal('hide');
-
                 console.log("!!!res from SUCCESS", response);
+                let id = response.user.id;
+                $('#addMessageModal').modal('hide');
+                // console.log("!!!res from id", id);
 
-                $('#items-row').prepend(displayDataAdd(response));
+                $('#items-row').prepend(displayDataAdd(response, id));
+
+                // let row = $('#row-' + response.user.id);
+                // console.log("!!!res from row", row);
+                // if (row.length) {
+                //     row.attr('data-id', response.user.id);
+                // } else {
+                //     $('#items-row').prepend(displayDataAdd(response));
+                // }
 
                 //очищення модального вікна
                 $('#user-name-add-form').val('');
@@ -71,12 +82,9 @@ $(document).ready(function () {
                 $('#err-msg-general').html($errMsg);
                 // console.log("!!!res from error", response.responseJSON.general.error.message);
             },
-
-
-
         })
-
-
     })
+
+
 })
 

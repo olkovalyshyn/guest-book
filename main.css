@@ -41,3 +41,8 @@ table thead th[data-column-name="date"]
 {
     cursor: pointer;
 }
+
+.btn-del-user,
+.btn-edit-user{
+    color: black;
+}

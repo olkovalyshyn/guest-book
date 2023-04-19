@@ -74,6 +74,7 @@ class UserLogin extends ConnectionDB
 //            $response = array('status' => false, 'error' => array('code' => 100, 'message' => "Please, fill all fields..."));
 //        }
         echo json_encode($response);
+
     }
 }
 
