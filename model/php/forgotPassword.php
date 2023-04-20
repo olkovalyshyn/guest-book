@@ -36,7 +36,6 @@ class RecoverPassword extends ConnectionDB
             } else {
                 http_response_code(400);
                 $response = array('status' => false, 'error' => true, 'user' => array('email' => $userEmail, 'message' => 'Not found.This email is not registered!'));
-//                echo "This email is not registered!";
             }
 
         }

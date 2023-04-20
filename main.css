@@ -20,13 +20,6 @@ body {
     text-decoration: none;
 }
 
-/*pagination*/
-/*.page-list{*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*background-color: #bbacac;*/
-/*}*/
-
 .active{
     color: red;
 }

@@ -7,7 +7,6 @@ class UserDelete extends ConnectionDb
 {
     public function delete($id)
     {
-
         $conn = $this->connect();
 
         $sql = "DELETE FROM `messages` WHERE `id` = ?";
@@ -19,7 +18,6 @@ class UserDelete extends ConnectionDb
         } else {
             $response = array('status' => false, 'error' => array('code' => 400, 'message' => "Not delete"));
         }
-
         echo json_encode($response);
     }
 }

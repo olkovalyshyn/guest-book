@@ -1,10 +1,8 @@
 $(document).ready(function (){
     $('body').on('mousedown', function () {
         $('.btn-del-user').off('click').on('click', function (){
-            console.log("CLICK on delete button");
 
             let id = $(this).closest('tr').data('id');
-            console.log("id", id);
             $('#modalConfirmDelete').modal('show');
 
             $('#modal-btn-yes').off("click").on("click", function () {
@@ -17,14 +15,12 @@ $(document).ready(function (){
                         },
                         success: function (response) {
                             $('#modalConfirmDelete').modal('hide');
-
-                            let res = jQuery.parseJSON(response);
-                            return res;
-
+                            response = jQuery.parseJSON(response);
+                            return response;
                         },
-                        error: function (xhr, status, error) {
-                            let res = jQuery.parseJSON(error);
-                            return res;
+                        error: function (error) {
+                            error = jQuery.parseJSON(error);
+                            return error;
                         }
                     });
 
@@ -35,11 +31,7 @@ $(document).ready(function (){
             $('#modal-btn-no').off("click").on('click',function () {
                 //закриває модалку
                 $('#modalConfirmDelete').modal('hide');
-
-
             });
-
-
         })
 
         $('.close').on('click', function (){

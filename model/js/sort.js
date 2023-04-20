@@ -1,6 +1,6 @@
-$(document).ready(function() {
+$(document).ready(function () {
     // Відслідковування кліків на стовпцях
-    $('th.sort').click(function() {
+    $('th.sort').click(function () {
         // Отримання назви стовпця та напрямку сортування
         let columnName = $(this).data('column-name');
         let sortDirection = $(this).data('sort-direction');
@@ -21,7 +21,7 @@ $(document).ready(function() {
                 columnName: columnName,
                 sortDirection: $(this).data('sort-direction')
             },
-            success: function(response) {
+            success: function (response) {
                 response = JSON.parse(response);
                 // Оновлення таблиці з новими даними
                 $('#items-row').html(response.user.html);

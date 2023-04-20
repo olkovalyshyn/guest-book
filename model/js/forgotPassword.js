@@ -1,9 +1,4 @@
 $(document).ready(function () {
-    // $('#forgotPasswordLink').on('click', function () {
-    // window.location.href = "http://guest-book/view/modal/modalForgotPassword.php";
-    // $('#forgotPassword').removeClass('visibility');
-    // });
-
 
     $('#btn-send-mail-recover').on('click', function () {
         let userEmail = $('#user-email-recover-pswd').val();
@@ -29,6 +24,7 @@ $(document).ready(function () {
             },
         })
     })
+
 //очищення модального вікна по кнопці знизу чи зверху модального вікна
     $('#modal-btn-cancel-recover, #modal-btn-x-recover').on('click', function(){
         $('#user-email-recover-pswd').val('');

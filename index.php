@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-<!--<h1>Hello, world!</h1>-->
 <?php include("./view/navbar.php")?>
 <?php include("./view/formAddMessage.php") ?>
 <?php include("./view/modal/modalSignupLogin.php") ?>
@@ -25,14 +24,6 @@
 <?php include("./view/modal/modalEditMsg.php") ?>
 
 
-<?php //include("./model/php/pagination.php") ?>
-<?php //include ("./view/pagination.php")?>
-
-<!--<div class="pagination-page">-->
-<!--    <a href=""><button type="button" class="page">-->
-<!--            qqq-->
-<!--        </button></a>`-->
-<!--</div>-->
 <?php if($_SESSION['name']): ?>
 <button  type="button" class="btn btn-primary lang" data-bs-toggle="modal" data-bs-target="#addMessageModal" id="btn-show-modal-add" data-translate="addmesage">Add message</button>
 <?php endif; ?>

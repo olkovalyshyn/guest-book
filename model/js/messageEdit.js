@@ -1,12 +1,9 @@
 $(document).ready(function () {
     $('body').on('mousedown', function () {
         $('.btn-edit-user').off('click').on('click', function () {
-            // console.log('CLICK ON EDIT');
 
             let message = $(this).closest('tr').find('.message').text();
-            // console.log("message", message);
             let id = $(this).closest('tr').data('id');
-            // console.log("id", id);
 
             //занесення даних рядка в модальне вікно для редагування
             $('#message-text-edit').val(message);

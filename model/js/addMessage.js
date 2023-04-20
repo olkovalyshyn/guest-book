@@ -15,7 +15,6 @@ $(document).ready(function () {
 
 
     $('#btn-send-msg').on('click', function () {
-        console.log("Clicked on btn-send-msg");
 
         let userName = $('#user-name-add-form').val();
         let userEmail = $('#user-email-add-form').val();
@@ -23,15 +22,6 @@ $(document).ready(function () {
         let captcha = $('#user-captcha').val();
         let message = $('#message-text').val();
         let language = $('#language').val();
-
-        // console.log("!!!userName", userName);
-        // console.log("!!!userEmail", userEmail);
-        // console.log("!!!homepage", homepage);
-        // console.log("!!!captcha", captcha);
-        // console.log("!!!message", message);
-        // console.log("!!!language", language);
-
-        // console.log("!!!$_SESSION[captcha]", $_SESSION["captcha"]);
 
         $.ajax({
             url: './model/php/addMessage.php',
@@ -46,21 +36,10 @@ $(document).ready(function () {
                 language,
             },
             success: function (response) {
-
-                console.log("!!!res from SUCCESS", response);
                 let id = response.user.id;
                 $('#addMessageModal').modal('hide');
-                // console.log("!!!res from id", id);
 
                 $('#items-row').prepend(displayDataAdd(response, id));
-
-                // let row = $('#row-' + response.user.id);
-                // console.log("!!!res from row", row);
-                // if (row.length) {
-                //     row.attr('data-id', response.user.id);
-                // } else {
-                //     $('#items-row').prepend(displayDataAdd(response));
-                // }
 
                 //очищення модального вікна
                 $('#user-name-add-form').val('');
@@ -71,20 +50,12 @@ $(document).ready(function () {
                 $('#language').val('ukrainian');
                 $('#err-msg-general').html('');
 
-                // $('#user-name').val('');
-                // $('#user-email').val('');
-                // $('#user-password').val('');
-                // $('#error-message').html('');
             },
             error: function (response) {
-                console.log("!!!res from error", response);
                 $errMsg = response.responseJSON.error.message;
                 $('#err-msg-general').html($errMsg);
-                // console.log("!!!res from error", response.responseJSON.general.error.message);
             },
         })
     })
-
-
 })
 

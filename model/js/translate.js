@@ -25,17 +25,6 @@ arrLang['eng']['sendMessage'] = 'Send message';
 arrLang['eng']['password'] = 'Password';
 arrLang['eng']['forgotPassword'] = 'Forgot password?';
 arrLang['eng']['cancel'] = 'Cancel';
-// forgotPassword  Forgot password?
-//     canсel Canсel
-// сlose Close
-// sendMessage  Send message
-// addMesageForm Add message form
-// homepage Homepage
-// captcha Captcha: enter symbols
-// language Language
-// ukrainian Ukrainian
-// english English
-// chooseFile Choose file
 
 arrLang['ua']['logo'] = 'Гостьова книга';
 arrLang['ua']['home'] = 'Домашня';
@@ -73,7 +62,7 @@ $(document).ready(function () {
             }
         })
     })
-
+ //при кліці на кнопку
     $('.translate').on('click', function () {
         let lang = $(this).attr('id');
         localStorage.setItem('lang', lang);

@@ -15,9 +15,6 @@
                     <p style="color:red" id="error-message-recover"></p>
                     <label for="user-email-recover-pswd">Email:</label>
                     <input type="email" name="email" id="user-email-recover-pswd">
-
-                    <!--    <button type="button" name="recover" id="btn-send-mail-recover">Send me mail</button>-->
-
                 </form>
 
 

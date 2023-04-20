@@ -49,15 +49,6 @@ class messageEdit extends ConnectionDb
             $result = $conn->prepare($sql);
             $result->execute($params);
             $response = array('status' => true, 'error' => null, 'user' => array('id' => $id, 'message' => $message));
-
-
-//            $sql = "UPDATE `users` SET `first_name`= :firstName, `last_name`= :lastName, `role`= :role, `status`= :status WHERE `id` = :id";
-//            $params = [':firstName' => $firstName, ':lastName' => $lastName, ':role' => $role, ':status' => $status, ':id' => $id];
-//            $result = $conn->prepare($sql);
-//            $result->execute($params);
-//            $response = array('status' => true, 'error' => null, 'user' => array('id' => $id, 'first_name' => $firstName, 'last_name' => $lastName, 'role' => $role, 'status' => $status));;
-//            $response = array('status' => false, 'error' => array('code' => 400, 'message' => 'ERROR'));
-
         }
         echo json_encode($response);
     }

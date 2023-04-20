@@ -7,7 +7,6 @@ class getAll extends ConnectionDb
     {
         $response = [];
         $conn = $this->connect();
-//        print_r($_COOKIE["once"]);
 
 //перевірка для разового завантаження даних із fixtures
         if (!$_COOKIE["once"]) {
@@ -16,7 +15,6 @@ class getAll extends ConnectionDb
 
             $dataStart = file_get_contents('http://guest-book/fixtures.json');
             $dataStart = json_decode($dataStart);
-
 
             foreach ($dataStart as $item) {
                 $sql = "INSERT INTO `messages` (`name`,`email`,`homepage`,`message`,`language`, `date`) VALUES(:name, :email, :homepage, :message, :language, :date)";

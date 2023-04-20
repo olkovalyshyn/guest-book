@@ -1,6 +1,5 @@
 $(document).ready(function (){
     $('#newPassword').on('submit', function (){
-        console.log("Click on change password");
 
         let key = $_GET['key']
 
@@ -15,8 +14,6 @@ $(document).ready(function (){
             },
             error: function (response) {
             },
-
         })
     })
-
 })

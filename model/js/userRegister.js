@@ -1,21 +1,16 @@
 $(document).ready(function () {
 
-    $('#btn-signup').on('mousedown', function(){
+    $('#btn-signup').on('mousedown', function () {
         $('#forgotPasswordLink').addClass('visibility');
     });
 
-
-    $('#btn-signup').on('click', function(){
-        console.log("Clicked on SIGNUP");
+    $('#btn-signup').on('click', function () {
         $(this).attr('data-btn', 'signup');
 
         $btnRole = $(this).data('btn');
-        console.log("!!!$btnRole",$btnRole);
 
         //якщо натиснута кнопка signup, то виконуємо дії
-        if($(this).data('btn') === 'signup'){
-            // $('#forgotPasswordLink').addClass('visibility');
-
+        if ($(this).data('btn') === 'signup') {
             $('#exampleModalLabel').html('Registration form');
             $('#modal-btn-ok').html('Registration');
 
@@ -26,8 +21,6 @@ $(document).ready(function () {
                 let userPassword = $('#user-password').val();
                 let userIp = $('#user-ip').val();
                 let userBrowser = $('#user-browser').val();
-
-                // console.log(userName, userEmail, userPassword, userIp, userBrowser);
 
                 $.ajax({
                     url: './model/php/userRegister.php',
@@ -40,7 +33,7 @@ $(document).ready(function () {
                         userIp,
                         userBrowser,
                     },
-                    success: function (response){
+                    success: function (response) {
                         $('#modalSignupLogin').modal('hide');
 
                         //очищення модального вікна
@@ -50,21 +43,16 @@ $(document).ready(function () {
                         $('#error-message').html('');
                     },
                     error: function (response) {
-                        //виводить в модалку повідомлення
                         let message = response.responseJSON.error.message;
                         $('#error-message').html(message);
                     },
-
                 })
             })
-
         }
-
-
     });
 
 //очищення модального вікна по кнопці знизу чи зверху модального вікна
-    $('#modal-btn-cancel, #modal-btn-x').on('click', function(){
+    $('#modal-btn-cancel, #modal-btn-x').on('click', function () {
         $('#user-name').val('');
         $('#user-email').val('');
         $('#user-password').val('');
@@ -80,5 +68,4 @@ $(document).ready(function () {
             $('#error-message').html('');
         }
     });
-
 })

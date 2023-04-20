@@ -34,8 +34,6 @@ class UserRegister extends ConnectionDB
 
                 $response = array('status' => true, 'error' => null, 'user' => array('name' => $userName, 'email' => $userEmail, 'password' => $userPassword, 'ip' => $userIp, 'browser' => $userBrowser));
             }
-
-
         } else {
             http_response_code(400);
             $response = array('status' => false, 'error' => array('code' => 100, 'message' => "Please, fill all fields..."));

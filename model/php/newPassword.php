@@ -2,7 +2,6 @@
 include('../../connect/connect.php');
 $data = $_GET;
 $key = $_GET['key'];
-echo "!!!key!!! ".$key;
 
 class NewPassword extends ConnectionDB
 {
